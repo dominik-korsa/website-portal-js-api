@@ -11,5 +11,6 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "socket.io-client": "^2.2.0"
-  }
+  },
+  "homepage": "https://github.com/dominik-korsa/website-portal-js-api#readme"
 }
