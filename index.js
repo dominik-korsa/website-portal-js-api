@@ -142,6 +142,23 @@ module.exports = class WebsitePortalAPI {
     });
   }
 
+  getName() {
+    return new Promise((resolve, reject) => {
+      if(!this.connected) {
+        reject(new Error("Not connected"));
+      }
+  
+      this._io.emit('getName', (error, name) => {
+        if(error) {
+          reject(new Error(error.error));
+          return;
+        }
+        
+        resolve(name);
+      });
+    });
+  }
+
   rename(name) {
     return new Promise((resolve, reject) => {
       if(!this.connected) {
