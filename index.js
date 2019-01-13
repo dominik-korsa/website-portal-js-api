@@ -60,6 +60,7 @@ module.exports = class WebsitePortalAPI {
         if(error) {
           this._portalId = undefined;
           this._portalToken = undefined;
+          this._loggedIn = false;
 
           reject(new Error(error.error));
           return;
@@ -67,6 +68,7 @@ module.exports = class WebsitePortalAPI {
 
         this._portalId = id;
         this._portalToken = token;
+        this._loggedIn = true;
         resolve();
       });
     });
